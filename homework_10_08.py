@@ -1,22 +1,56 @@
 #Завдання 4(а):
 #Розв'язок задачі:
-def menu():
-     if user_choise == "Відображення списку":
-         return print(new_list)
-     elif user_choise == "Отримання максимального значення у списку":
-         return print(max(new_list))
-     elif user_choise == "Отримання мінімального значення у списку":
-         return print(min(new_list))
-     elif user_choise == "Відображення значення елемента за індексом, введеним користувачем":
-         index_from_list = int(input("Введіть індекс зі списку який вас цікавить:"))
-         return new_list[index_from_list - 1]
-     elif user_choise == "Видалення елемента за індексом, введеним користувачем":
-         index_for_delete = int(input("Введіть індекс зі списку який вас цікавить:"))
-         if index_for_delete > quantity_elements :
-             return ("користувач ввів неправильне значення для індексу елемента в списку")
-         else:
-             del new_list[index_for_delete - 1]
-             return print(new_list)
+# def menu():
+#      if user_choise == "Відображення списку":
+#          return print(new_list)
+#      elif user_choise == "Отримання максимального значення у списку":
+#          return print(max(new_list))
+#      elif user_choise == "Отримання мінімального значення у списку":
+#          return print(min(new_list))
+#      if user_choise == "Відображення значення елемента за індексом, введеним користувачем":
+#          index_from_list = int(input("Введіть індекс зі списку який вас цікавить:"))
+#          return new_list[index_from_list - 1]
+#
+#      elif user_choise == "Видалення елемента за індексом, введеним користувачем":
+#          index_for_delete = int(input("Введіть індекс зі списку який вас цікавить:"))
+#          if index_for_delete > quantity_elements :
+#              return ("користувач ввів неправильне значення для індексу елемента в списку")
+#          else:
+#              del new_list[index_for_delete - 1]
+#              return print(new_list)
+
+
+# Завдання 4(b):
+# Розв'язок задачі:
+# def menu_one():
+#      if user_choise == "Відображення списку":
+#          return print(new_list)
+#      elif user_choise == "Отримання максимального значення у списку":
+#          return print(max(new_list))
+#      elif user_choise == "Отримання мінімального значення у списку":
+#          return print(min(new_list))
+
+# def menu_four():
+#     try:
+#         if index_from_list > quantity_elements :
+#                   raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
+#         return print(new_list[index_from_list - 1])
+#     except ValueError as err:
+#         return print("користувач ввів неправильне значення для індексу елемента в списку")
+
+# def menu_five():
+#     try:
+#         if index_for_delete > quantity_elements :
+#                   raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
+#         del new_list[index_for_delete - 1]
+#         return print(new_list)
+#     except ValueError as err:
+#         return print("користувач ввів неправильне значення для індексу елемента в списку")
+
+
+
+
+
 
 
 
@@ -112,18 +146,18 @@ if __name__ == "__main__":
      #(користувач ввів неправильне значення для індексу елемента в списку), і виведіть повідомлення про помилку.
 
      #Дані від користувача:
-     new_list = []
-     while True:
-         user_numbers = int(input("Введіть числа (для завершення процесу введіть 0):"))
-         if user_numbers == 0:
-                break
-         new_list.append(user_numbers)
-
-     quantity_elements = len(new_list)
+     # new_list = []
+     # while True:
+     #     user_numbers = int(input("Введіть числа (для завершення процесу введіть 0):"))
+     #     if user_numbers == 0:
+     #            break
+     #     new_list.append(user_numbers)
+     #
+     # quantity_elements = len(new_list)
 
      #Меню:
-     print("Виберіть необхідну операцію:\n1.Відображення списку\n2.Отримання максимального значення у списку\n3.Отримання мінімального значення у списку\n4.Відображення значення елемента за індексом, введеним користувачем\n5.Видалення елемента за індексом, введеним користувачем")
-     user_choise = input("Введіть потрібну вам операцію:")
+     # print("Виберіть необхідну операцію:\n1.Відображення списку\n2.Отримання максимального значення у списку\n3.Отримання мінімального значення у списку\n4.Відображення значення елемента за індексом, введеним користувачем\n5.Видалення елемента за індексом, введеним користувачем")
+     # user_choise = input("Введіть потрібну вам операцію:")
 
      # try:
      #      if user_choise == "Відображення списку":
@@ -152,31 +186,50 @@ if __name__ == "__main__":
      #a)Перша версія не обробляє винятки всередині функцій. Уся обробка знаходиться зовні;
      #b)Друга версія обробляє винятки всередині функцій.
 
-     try:
-         if user_choise == "Відображення списку" or "Отримання максимального значення у списку" or "Отримання мінімального значення у списку":
-             print(menu())
-         elif user_choise == "Відображення значення елемента за індексом, введеним користувачем":
-             new_index = menu()
 
-             if new_index > quantity_elements:
-                  raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
-             else:
-                  print(menu())
-     except ValueError as err:
-              print("користувач ввів неправильне значення для індексу елемента в списку")
-     try:
-         if user_choise == "Видалення елемента за індексом, введеним користувачем":
-            index_for_delete = int(input("Введіть індекс зі списку який вас цікавить:"))
+     #Дані від користувача:
+     # new_list = []
+     # while True:
+     #     user_numbers = int(input("Введіть числа (для завершення процесу введіть 0):"))
+     #     if user_numbers == 0:
+     #         break
+     #     new_list.append(user_numbers)
+     #
+     # quantity_elements = len(new_list)
 
-            if index_for_delete > quantity_elements:
-                 raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
-            else:
-                 print(menu())
-     except ValueError as err:
-                 print("користувач ввів неправильне значення для індексу елемента в списку")
+     # Меню:
+     # print("Виберіть необхідну операцію:\n1.Відображення списку\n2.Отримання максимального значення у списку\n3.Отримання мінімального значення у списку\n4.Відображення значення елемента за індексом, введеним користувачем\n5.Видалення елемента за індексом, введеним користувачем")
+     # user_choise = input("Введіть потрібну вам операцію:")
 
+     #Розв'язок завдання 4(a)(НЕ ПРАЦЮЄ 4 і 5 КОМАНДА)!!!!!!!!!!:
+     # if user_choise == "Відображення списку" or "Отримання максимального значення у списку" or "Отримання мінімального значення у списку":
+     #         print(menu())
+     # if user_choise == "Відображення значення елемента за індексом, введеним користувачем":
+     #         index_from_list = int(input("Введіть індекс зі списку який вас цікавить:"))
+     # try:
+     #     if index_from_list > quantity_elements:
+     #              raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
+     #     else:
+     #              print(menu())
+     # except ValueError as err:
+     #          print("користувач ввів неправильне значення для індексу елемента в списку")
+     # try:
+     #     if user_choise == "Видалення елемента за індексом, введеним користувачем":
+     #        index_for_delete = int(input("Введіть індекс зі списку який вас цікавить:"))
 
+     #     if index_for_delete > quantity_elements:
+     #             raise ValueError("користувач ввів неправильне значення для індексу елемента в списку")
+     #     else:
+     #             print(menu())
+     # except ValueError as err:
+     #             print("користувач ввів неправильне значення для індексу елемента в списку")
 
-
-
-
+     # Розв'язок завдання 4(b):
+     # if user_choise == "Відображення списку" or "Отримання максимального значення у списку" or "Отримання мінімального значення у списку":
+     #        print(menu_one())
+     # if user_choise == "Відображення значення елемента за індексом, введеним користувачем":
+     #     index_from_list = int(input("Введіть індекс зі списку який вас цікавить:"))
+     #     print(menu_four())
+     # if user_choise == "Видалення елемента за індексом, введеним користувачем":
+     #     index_for_delete = int(input("Введіть індекс зі списку який вас цікавить:"))
+     #     print(menu_five())
